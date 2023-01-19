@@ -17,5 +17,5 @@ class Category extends Model
     public function menus(){
         return $this->belongsToMany(Menu::class)-> withPivot('qty', 'sub_total');
     }
-    
+
 }

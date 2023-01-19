@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ReservationController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -21,12 +21,11 @@ Route::middleware(['auth:sanctum', 'emailverification'])->get('/user', function 
 });
 
 Route::middleware('auth:sanctum')->group(function () {
-    Route::post('Devices', [DeviceController::class, 'store']);
-    Route::get('FetchData', [DeviceController::class, 'fetchData']);
-    Route::delete('delete/{id}', [DeviceController::class, 'destroy']);
-    Route::get('show/{id}', [DeviceController::class, 'show']);
-    Route::put('update/{id}', [DeviceController::class, 'update']);
+    Route::post('reservations', [ReservationController::class, 'store']);
+    Route::get('reservations', [ReservationController::class, 'fetchData']);
+    Route::delete('reservations/{id}', [ReservationController::class, 'destroy']);
+    Route::get('reservations/{id}', [ReservationController::class, 'show']);
+    Route::put('reservations/{id}', [ReservationController::class, 'update']);
 
-    // Route::post('amazings', [AmazingController::class, 'store']);
 });
 Route::post('/login', [AuthController::class, 'login']);

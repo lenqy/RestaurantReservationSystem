@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Reservation;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 
@@ -30,11 +31,6 @@ class AuthController extends Controller
         }
     }
 
-    // public function login(){
-    //     $user= User::first();
-    //     $token= $user->createToken('api');
-    //     return [
-    //         'token'=>$token->plainTextToken
-    //     ];
-    // }
+
+
 }
